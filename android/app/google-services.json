@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "841417413747",
+    "project_id": "travel-bfa22",
+    "storage_bucket": "travel-bfa22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841417413747:android:54c78086ecf3156bfac606",
+        "android_client_info": {
+          "package_name": "com.example.lesson_72"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgR5vsGo50dabwf3k74etsEjOLcgqopvQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
