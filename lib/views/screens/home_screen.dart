@@ -16,6 +16,14 @@ class HomeScreen extends StatelessWidget {
           "Travel",
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              _showAddLocationDialog(context);
+            },
+            icon: const Icon(Icons.add),
+          ),
+        ],
         centerTitle: true,
       ),
       body: StreamBuilder(
@@ -82,14 +90,13 @@ class HomeScreen extends StatelessWidget {
                               context: context,
                               builder: (context) {
                                 return AlertDialog(
-                                  content:
-                                      const Text("Are you sure to delete it"),
+                                  content: const Text("O'chirishga aminmisiz?"),
                                   actions: [
                                     TextButton(
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
-                                      child: const Text("Cancel"),
+                                      child: const Text("Yo'q"),
                                     ),
                                     TextButton(
                                       onPressed: () {
@@ -98,7 +105,7 @@ class HomeScreen extends StatelessWidget {
                                         Navigator.pop(context);
                                       },
                                       child: const Text(
-                                        "Delete",
+                                        "Ha",
                                         style: TextStyle(color: Colors.red),
                                       ),
                                     ),
@@ -126,12 +133,6 @@ class HomeScreen extends StatelessWidget {
             },
           );
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _showAddLocationDialog(context);
-        },
-        child: const Icon(Icons.add),
       ),
     );
   }
@@ -244,14 +245,13 @@ class HomeScreen extends StatelessWidget {
         return StatefulBuilder(
           builder: (context, setState) {
             return AlertDialog(
-              title: const Text('Add Location'),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   TextField(
                     controller: titleController,
                     decoration: const InputDecoration(
-                      labelText: 'Title',
+                      labelText: 'Manzil',
                     ),
                   ),
                   Row(
@@ -305,7 +305,6 @@ class HomeScreen extends StatelessWidget {
                           pickedImage0!.path,
                         );
                       } catch (error) {
-                        // Here you can handle any errors
                         print("Error adding travel: $error");
                       }
 
@@ -316,7 +315,7 @@ class HomeScreen extends StatelessWidget {
                       Navigator.of(context).pop();
                     }
                   },
-                  child: const Text('Add'),
+                  child: const Text("Qo'shish"),
                 ),
               ],
             );
@@ -346,14 +345,13 @@ class HomeScreen extends StatelessWidget {
         return StatefulBuilder(
           builder: (context, setState) {
             return AlertDialog(
-              title: const Text('Edit Location'),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   TextField(
                     controller: titleController,
                     decoration: const InputDecoration(
-                      labelText: 'Title',
+                      labelText: 'Manzil',
                     ),
                   ),
                   Row(
@@ -402,7 +400,7 @@ class HomeScreen extends StatelessWidget {
                       Navigator.of(context).pop();
                     }
                   },
-                  child: const Text('Update'),
+                  child: const Text("O'zgartirish"),
                 ),
               ],
             );
